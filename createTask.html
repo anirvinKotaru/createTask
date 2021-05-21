@@ -1,0 +1,55 @@
+<html>
+<center>
+    <head>
+      <title>Greek Story</title>
+      <script>
+              var destiny = ["Hero", "Villan"]
+              var gods = ["Zeus", "Poseidon", "Hades"]
+              var table = ""
+              var sKy = document.getElementById("sky").value;
+              var wAter = document.getElementById("water").value;
+              var dEath = document.getElementById("death").value;
+
+
+              function hidePics()
+              {
+                document.getElementById("sky").style.visibility = "hidden";
+                document.getElementById("water").style.visibility = "hidden";
+                document.getElementById("death").style.visibility = "hidden";
+                document.getElementById("chooseFather").style.visibility = "hidden";
+              }
+              function displayParentAndHideHook()
+              {
+                document.getElementById("hook").style.visibility = "hidden";
+                document.getElementById("start").style.visibility = "hidden";
+                document.getElementById("chooseFather").style.visibility = "visible";
+                destinyChoice();
+              }
+              function destinyChoice()
+              {
+                document.getElementById("sky").style.visibility = "visible";
+                document.getElementById("water").style.visibility = "visible";
+                document.getElementById("death").style.visibility = "visible";
+                table = table + gods[0] + "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp" + gods[1] + "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp" + gods[2] + "<br>";
+                document.getElementById("output").innerHTML = table;
+
+
+
+              }
+      </script>
+    </head>
+        <body>
+        <br>
+        <h2 id = hook>Would you like to start your adventure as a demigod living in a world infested with Monsters? If that is what you want click "start" to begin your journey.</h2>
+        <h3 id = chooseFather>Choose Your Father</h3>
+        <input id = "start" type = "button" value = "START" onclick = "displayParentAndHideHook()">
+        </body>
+        <body onload="hidePics()">
+        <br>
+        <span id = "output"></span>
+        <img id="sky" src= "zues.png" width="250" height="250"onclick="DoSomething();" />
+        <img id="water" src= "poseidon.png" width="250" height="250"onclick="DoSomething();" />
+        <img id="death" src= "hades.png" width="250" height="250"onclick="DoSomething();" />
+    </body>
+</center>
+</html>
